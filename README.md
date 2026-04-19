@@ -6,7 +6,7 @@ This is my python mini project.
 - Billing system
 
 ## Sample Output
-
+''''''''''
   1.Book Room
 2.Order Food/Drinks
 3.Exit
@@ -50,5 +50,5 @@ Items Ordered:
 Total Bill: 450
 
 Thank you, sadiq ! Visit again 😊
-
+''''''''''''''''''
 Created by : Ayesha Nikhat 
