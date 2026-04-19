@@ -1,5 +1,6 @@
 rooms = {}
 bills = {}
+orders = {}
 current_room = None
 
 def book_room():
@@ -12,6 +13,7 @@ def book_room():
     else:
         rooms[room] = name
         bills[room] = 0
+        orders[room] = []
         current_room = room
         print("Room booked & selected!")
         print("Welcome", name)
@@ -29,10 +31,13 @@ def order_food():
     for f in food:
         if f == "1":
             bills[current_room] += 200
+            orders[current_room].append("Pizza")
         elif f == "2":
             bills[current_room] += 100
+            orders[current_room].append("Burger")
         elif f == "3":
             bills[current_room] += 100
+            orders[current_room].append("Sandwich")
 
     # DRINKS
     print("\nDrinks Menu")
@@ -42,11 +47,18 @@ def order_food():
     for d in drink:
         if d == "1":
             bills[current_room] += 50
+            orders[current_room].append("Coke")
         elif d == "2":
             bills[current_room] += 100
+            orders[current_room].append("Cold Coffee")
         elif d == "3":
             bills[current_room] += 80
+            orders[current_room].append("Hot Coffee")
 
+    # 🔥 FINAL BILL + ITEMS
+    print("\nItems Ordered:")
+    for item in orders[current_room]:
+        print("-", item)
     
     print("\nTotal Bill:", bills[current_room])
     print("Thank you,", rooms[current_room], "! Visit again 😊")
